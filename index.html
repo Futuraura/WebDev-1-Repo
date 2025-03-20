@@ -1,15 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Webdev 1 Course</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    Hello World!
-    <script src="script.js" async defer></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal@Mark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-black text-green-500 font-mono">
+    <div class="fixed inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:10px_10px]"></div>
+    <header class="fixed w-full top-0 z-50 bg-black/90 border-b border-green-500/30">
+        <nav class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-6 py-2 text-sm">
+                <li><a href="#home" class="hover:text-white transition-colors">[HOME]</a></li>
+                <li><a href="#about" class="hover:text-white transition-colors">[ABOUT]</a></li>
+                <li><a href="#skills" class="hover:text-white transition-colors">[SKILLS]</a></li>
+                <li><a href="#education" class="hover:text-white transition-colors">[EDUCATION]</a></li>
+                <li><a href="#certifications" class="hover:text-white transition-colors">[CERTS]</a></li>
+                <li><a href="#projects" class="hover:text-white transition-colors">[PROJECTS]</a></li>
+                <li><a href="#socials" class="hover:text-white transition-colors">[SOCIALS]</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 pt-16">
+        <section id="home" class="min-h-screen flex items-center justify-center">
+            <div class="bg-black/80 p-6 rounded border border-green-500/30 w-full max-w-2xl">
+                <div class="mb-4">
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> whoami
+                    <h1 class="text-4xl font-bold mt-2">MARK_PIKARO</h1>
+                </div>
+                <div class="mb-4">
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> cat status.txt
+                    <p class="mt-2">Infiltrating systems. Building a "big" <a href="https://netherite.host/" class="hover:text-white transition-colors">[business]</a>. Breaking boundaries.</p>
+                </div>
+                <div class="mb-4">
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> cat quote.txt
+                    <h2 class="mt-2">"The quieter you are the more you hear"</h2><p class="mt-2">- Mark P.</p>
+                </div>
+                <div>
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> <span class="typed-text"></span><span class="animate-pulse">_</span>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> ABOUT_ME</h2>
+            <div class="border border-green-500/30 p-6 rounded max-w-2xl">
+                <div class="mb-4">
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> cat about.txt
+                    <p class="mt-2">I am a computer enthusiast and fullstack developer with a passion for creating secure and innovative solutions. <br><br>
+                        Actually my story is really interesting, since it all started with the want to utilize a computer, that my dad got from a sale for 50$ from his workplace, as a Minecraft server. <br><br>
+                        <strong>So I started learning.</strong><br><br>
+                        First it was how to open ports into the internet, then how to make an "Alphabetic" IP (Domain name) for free, it evolved into switching from connecting through Anydesk to a graphical program TT-Server Maker into trying linux, I still remember installing Ubuntu server 20.04 on the computer.<br><br>
+                        Let's be honest for a moment here; I started researching into illegal stuff too. It was just so damn facinating, I was so curious, I wanted to know how things worked, how to break them, how to fix them.<br><br>
+                        I started with TOR and learning about the onion network; I still remember those silent evenings where I'd boot up TOR and browse it like any other person would browse the clearnet. I slowly learnt about websites, networking and how everything worked in general. Learnt to come up with simplest DDOS attacks, but then I hit the roof. I thought that I've had enough of being a script kiddie and searching github for software pre-built, so I deicded to start learning into actually creating stuff and here I am today.<br><br>
+                        Just as an addition I am trying to get into the top 1% of the world's economy, so I am creating my own <a href="https://netherite.host/" class="hover:text-white transition-colors">[business]</a>. It requires a lot of the skills that I wanna learn like Networking and Web Development.<br><br>
+                        Imma be real here for a moment, I am not good at anything <i>yet</i>; but I am trying hard to be. The love for creating, exploring, breaking stuff makes me wanna learn more and more.
+                        </a>
+                    </p>
+                </div>
+                <div>
+                    <span class="text-green-500 font-bold text-lg">root@mark:~$</span> cat interests.txt
+                    <p class="mt-2">- Network Security<br>- Web Development<br>- Penetration Testing<br>- System Architecture<br>- Gaming addction (mine)<br>- Minecraft<br>- Making stuff work the way it shouldn't<br>- OSINT (aka. Doxing)<br>- Social Engineering<br>- Creating stuff (Even Minecraft servers are good enough to sathisfy the creator within me)<br>- DarkNet (Not as interesting as I thought)<br>- Business Creation (The process; The selling to people and seeing them smile when using something made by me)<br>- Helping anyone with anything</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> SKILL_MATRIX</h2>
+            <div class="space-y-4 max-w-2xl">
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>HTML+CSS Stack</span>
+                        <span>[##########] 100%</span>
+                    </div>
+                    <p class="text-sm text-green-400/70">Certified - <a href="https://www.freecodecamp.org/certification/Futuraura/responsive-web-design" class="hover:text-white transition-colors">[View Certificate]</a></p>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>JavaScript</span>
+                        <span>[#/--------] 13%</span>
+                    </div>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>Python</span>
+                        <span>[###/------] 36%</span>
+                    </div>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>Cybersecurity</span>
+                        <span>[######/---] 62%</span>
+                    </div>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>Networking</span>
+                        <span>[##/-------] 35%</span>
+                    </div>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <div class="flex justify-between mb-2">
+                        <span>Linux</span>
+                        <span>[####/-----] 47%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> EDUCATION_PATH</h2>
+            <div class="space-y-4 max-w-2xl">
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Kärsämäen Koulu</h3>
+                    <p class="text-sm text-green-500/70">Elementary School</p>
+                    <p class="text-green-400/70">2015 Q3 - 2017 Q2 (1-2th Grades)</p>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Pallivahan Koulu</h3>
+                    <p class="text-sm text-green-500/70">Elementary School</p>
+                    <p class="text-green-400/70">2017 Q3 - 2021 Q2 (3-6th Grades)</p>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Turun Lyseon koulu</h3>
+                    <p class="text-sm text-green-500/70">Middle School</p>
+                    <p class="text-green-400/70">2021 Q3 - 2024 Q1 (7-9th Grades)</p>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Yli-Maarian Koulu (Ypsilon)</h3>
+                    <p class="text-sm text-green-500/70">Middle School</p>
+                    <p class="text-green-400/70">2024 Q1 - 2024 Q2 (9th Grade)</p>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Turun Ammatti-instituutti</h3>
+                    <p class="text-sm text-green-500/70">Vocational School + College</p>
+                    <p class="text-green-400/70">2024 Q3 - Present Day</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maybe some day later... -->
+        <!--
+        <section id="certifications" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> CERTIFICATIONS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-green-500/30 p-4 rounded">
+                    <a href="https://www.freecodecamp.org/certification/Futuraura/responsive-web-design" class="group"><h3 class="text-lg font-bold group-hover:text-green-400 group-hover:glitch transition-colors">[<span class="text-green-500/70">R3SP0NS1V3_W3B_D3S1GN</span>]</h3></a>                    <p class="text-green-400/70">ID: WEB-0xF3C0</p>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <section id="projects" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> CLASSIFIED_PROJECTS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Project: Files</h3>
+                    <p class="text-green-400/70 mb-4">It's mainly a fucking joke</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">LOTS OF BREN</span>
+                    </div>
+                    <a href="files-meme.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Project: Nether Portal</h3>
+                    <p class="text-green-400/70 mb-4">A joke we had with my friend (He asked me to make a portal)</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">JAVASCRIPT</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">OBSIDIAN (Minecraft)</span>
+                    </div>
+                    <a href="nether_portal.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Project: Gift</h3>
+                    <p class="text-green-400/70 mb-4">Another joke I came up with to prank people</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">JAVASCRIPT</span>
+                    </div>
+                    <a href="gift-meme.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Assignment: Wise answering program</h3>
+                    <p class="text-green-400/70 mb-4">10th assignment from the Programmer's tools course. The website takes the data given by user in a post request and puts it into text on another page.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
+                    </div>
+                    <a href="t10" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Assignment: Room reserving service</h3>
+                    <p class="text-green-400/70 mb-4">11th assignment from the Programmer's tools course. The website creates and removes stuff inside a MYSQL database.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">SQL</span>
+                    </div>
+                    <a href="t11" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+                <div class="border border-green-500/30 p-4 rounded">
+                    <h3 class="text-lg font-bold">Assignment: Registration page</h3>
+                    <p class="text-green-400/70 mb-4">The assignment was made by ChatGPT; It's a part of assignment number 16. The website creates and removes lines inside a MYSQL database.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
+                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">SQL</span>
+                    </div>
+                    <a href="register" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="socials" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> SOCIAL_CONNECTIONS</h2>
+            <div class="border border-green-500/30 p-6 rounded max-w-2xl">
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://github.com/Futuraura" class="flex items-center space-x-2 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                        <span>[GitHub]</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/markpikaro/" class="flex items-center space-x-2 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                        <span>[LinkedIn]</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-green-500/30 mt-16">
+        <div class="container mx-auto px-4 py-4">
+            <p class="text-center text-green-500/50 text-sm">© 2025 MARK_PIKARO</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+</body>
 </html>
