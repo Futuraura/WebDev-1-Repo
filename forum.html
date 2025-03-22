@@ -10,11 +10,22 @@
     <nav class="w-96 h-screen bg-slate-700 shadow-lg p-6">
         <form action="" class="flex flex-col flex-1 grid w-full">
             <legend class="text-3xl font-bold text-left">Create a post</legend>
-            <label class="font-semibold text-lg mt-2">Date of birthday</label>
-            <input type="date" class="bg-transparent border-b-2 w-full">
-            <label class="font-semibold text-lg mt-2">Email</label>
-            <input type="email" class="bg-transparent border-b-2 w-full focus:outline-none">
-            <hr class="my-3 border">
+            <label class="font-semibold text-lg mt-4">Date of birthday</label>
+            <input type="date" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300">
+            <label class="font-semibold text-lg mt-4">Email</label>
+            <input type="email" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300">
+            <label class="font-semibold text-lg mt-4">Post type</label>
+            <select name="postType" id="postType" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300">
+                <option value="q">Question</option>
+                <option value="p">Post</option>
+            </select>
+            <label class="font-semibold text-lg mt-4">Message</label>
+            <textarea name="message" id="message" class="bg-slate-800 focus:outline-none focus:border-blue-300 border-b-2 w-full p-1"></textarea>
+            <div class="w-full flex mt-2">
+                <input type="checkbox" class="inline-block mr-2">
+                <label class="font-regular text-md inline-block">I accept the Terms of service</label>
+            </div>
+            <input type="submit" class="text-white bg-slate-800 mt-4 p-2 font-semibold hover:outline-offset-1 hover:outline-dashed hover:outline-blue-300 rounded-sm">
         </form>
     </nav>
     <main class="flex-1">
