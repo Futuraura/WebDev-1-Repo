@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-black text-green-500 font-mono">
-    <div class="fixed inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+    <div class="fixed inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:20px_20px]"></div>
     <header class="fixed w-full top-0 z-50 bg-black/90 border-b border-green-500/30">
         <nav class="container mx-auto px-4">
-            <ul class="flex justify-center space-x-6 py-2 text-sm">
-                <li><a href="#home" class="hover:text-white transition-colors">[HOME]</a></li>
-                <li><a href="#about" class="hover:text-white transition-colors">[ABOUT]</a></li>
-                <li><a href="#skills" class="hover:text-white transition-colors">[SKILLS]</a></li>
-                <li><a href="#education" class="hover:text-white transition-colors">[EDUCATION]</a></li>
-                <li><a href="#projects" class="hover:text-white transition-colors">[PROJECTS]</a></li>
-                <li><a href="#socials" class="hover:text-white transition-colors">[SOCIALS]</a></li>
+            <ul class="flex justify-center space-x-4 py-2 text-sm">
+                <li><a class="text-white transition-colors select-none">[HOME]</a></li>
+                <li><a href="projects.html" class="hover:text-white transition-colors select-none">[PROJECTS]</a></li>
+            </ul>
+            <ul class="flex justify-center space-x-4 py-2 text-sm">
+                <li><a href="#home" class="hover:text-white transition-colors select-none">[HOME]</a></li>
+                <li><a href="#about" class="hover:text-white transition-colors select-none">[ABOUT]</a></li>
+                <li><a href="#skills" class="hover:text-white transition-colors select-none">[SKILLS]</a></li>
+                <li><a href="#education" class="hover:text-white transition-colors select-none">[EDUCATION]</a></li>
+                <li><a href="#socials" class="hover:text-white transition-colors select-none">[SOCIALS]</a></li>
             </ul>
         </nav>
     </header>
@@ -28,6 +31,7 @@
                 <div class="mb-4">
                     <span class="text-green-500 font-bold text-lg">root@mark:~$</span> whoami
                     <h1 class="text-4xl font-bold mt-2">MARK_PIKARO</h1>
+                    <h3 class="text-xl font-bold"><u>The</u> <span id="changing-text"></span></h3>
                 </div>
                 <div class="mb-4">
                     <span class="text-green-500 font-bold text-lg">root@mark:~$</span> cat status.txt
@@ -137,88 +141,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Maybe some day later... -->
-        <!--
-        <section id="certifications" class="py-16">
-            <h2 class="text-2xl font-bold mb-8">> CERTIFICATIONS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="border border-green-500/30 p-4 rounded">
-                    <a href="https://www.freecodecamp.org/certification/Futuraura/responsive-web-design" class="group"><h3 class="text-lg font-bold group-hover:text-green-400 group-hover:glitch transition-colors">[<span class="text-green-500/70">R3SP0NS1V3_W3B_D3S1GN</span>]</h3></a>                    <p class="text-green-400/70">ID: WEB-0xF3C0</p>
-                </div>
-            </div>
-        </section>
-        -->
-
-        <section id="projects" class="py-16">
-            <h2 class="text-2xl font-bold mb-8">> CLASSIFIED_PROJECTS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Project: Files</h3>
-                    <p class="text-green-400/70 mb-4">It's mainly a fucking joke</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">LOTS OF BREN</span>
-                    </div>
-                    <a href="files-meme.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Project: Nether Portal</h3>
-                    <p class="text-green-400/70 mb-4">A joke we had with my friend (He asked me to make a portal)</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">JAVASCRIPT</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">OBSIDIAN (Minecraft)</span>
-                    </div>
-                    <a href="nether_portal.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Project: Gift</h3>
-                    <p class="text-green-400/70 mb-4">Another way I came up with to prank people</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">JAVASCRIPT</span>
-                    </div>
-                    <a href="gift-meme.html" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Assignment: Wise answering program</h3>
-                    <p class="text-green-400/70 mb-4">10th assignment from the Programmer's tools course. The website takes the data given by user in a post request and puts it into text on another page.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
-                    </div>
-                    <a href="t10" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Assignment: Room reserving service</h3>
-                    <p class="text-green-400/70 mb-4">11th assignment from the Programmer's tools course. The website creates and removes stuff inside a MYSQL database.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">SQL</span>
-                    </div>
-                    <a href="t11" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-                <div class="border border-green-500/30 p-4 rounded">
-                    <h3 class="text-lg font-bold">Assignment: Registration page</h3>
-                    <p class="text-green-400/70 mb-4">The assignment was made by ChatGPT and I wrote it; It's a part of assignment number 16. The website creates and removes lines inside a MYSQL database.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">HTML</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">CSS</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">PHP</span>
-                        <span class="px-2 py-1 border border-green-500/30 rounded text-xs">SQL</span>
-                    </div>
-                    <a href="register" class="inline-block mt-4 px-4 py-2 border border-green-500/30 rounded hover:bg-green-500/10 transition-colors">[View Project]</a>
-                </div>
-            </div>
-        </section>
-
+        
         <section id="socials" class="py-16">
             <h2 class="text-2xl font-bold mb-8">> SOCIAL_CONNECTIONS</h2>
             <div class="border border-green-500/30 p-6 rounded max-w-2xl">
@@ -242,7 +165,14 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script>
+        var typed = new Typed('#changing-text',{
+            strings: ['Full-Stack Developer', '"I use Linux btw" -guy', 'Billion dollar corpo owner', 'Second S1MPLE'],
+            typeSpeed: 50,
+            loop: true,
+            loopCount: Infinity,
+        })
+    </script>
 </body>
 </html>
