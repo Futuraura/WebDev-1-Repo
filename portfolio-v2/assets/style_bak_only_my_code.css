@@ -10,6 +10,7 @@
 
 html{
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -144,4 +145,10 @@ body{
     margin: auto;
     width: 48px;
     height: 48px;
+}
+
+.about-section{
+    background: url(ruan-richard-rodrigues-sT1sEvYUjwU-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
 }
