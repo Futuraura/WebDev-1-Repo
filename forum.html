@@ -7,25 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-white h-screen w-full flex">
+    <dialog class="m-auto bg-slate-900 outline-blue-200 outline p-6 rounded-lg" id="CommentPostDialog">
+        <form method="dialog">
+            <h3 class="text-xl font-bold mb-4 text-gray-300">Post a Comment</h3>
+            <textarea class="w-full h-32 bg-slate-800 rounded-lg p-2 mb-4 text-gray-300" cols="64" placeholder="Write your comment here..."></textarea>
+            <div class="flex justify-end gap-2">
+                <button class="bg-slate-700 p-2 rounded-lg hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed text-gray-300">Close</button>
+                <button type="submit" class="bg-slate-700 p-2 rounded-lg hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed text-gray-300">Submit Comment</button>
+            </div>
+        </form>
+    </dialog>
     <nav class="w-96 h-screen bg-slate-700 shadow-lg p-6">
-        <form action="" class="flex flex-col flex-1 grid w-full">
-            <legend class="text-3xl font-bold text-left">Create a post</legend>
-            <label class="font-semibold text-lg mt-4">Email</label>
-            <input type="email" name="email" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2">
-            <label class="font-semibold text-lg mt-4">Date of birthday</label>
-            <input type="date" name="dob" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2">
-            <label class="font-semibold text-lg mt-4">Post type</label>
-            <select name="postType" id="postType" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2">
+        <legend class="text-3xl font-bold text-left text-gray-200">Create a post</legend>
+        <form class="mt-4">
+            <label class="font-semibold text-lg mt-4 text-gray-200">Email</label>
+            <input type="email" name="email" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2 text-gray-200">
+            <label class="font-semibold text-lg mt-4 text-gray-200">Date of birthday</label>
+            <input type="date" name="dob" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2 text-gray-200">
+            <label class="font-semibold text-lg mt-4 text-gray-200">Post type</label>
+            <select name="postType" id="postType" class="bg-slate-800 rounded-sm border-b-2 w-full focus:outline-none focus:border-blue-300 p-2 text-gray-200">
                 <option value="q">Question</option>
                 <option value="p">Post</option>
             </select>
-            <label class="font-semibold text-lg mt-4">Message</label>
-            <textarea name="message" id="message" class="bg-slate-800 focus:outline-none focus:border-blue-300 border-b-2 w-full p-1"></textarea>
+            <label class="font-semibold text-lg mt-4 text-gray-200">Message</label>
+            <textarea name="message" id="message" class="bg-slate-800 focus:outline-none focus:border-blue-300 border-b-2 w-full p-1 text-gray-200"></textarea>
             <div class="w-full flex mt-2">
                 <input type="checkbox" class="inline-block mr-2">
-                <label class="font-regular text-md inline-block">I accept the Terms of service</label>
+                <label class="font-regular text-md inline-block text-gray-200">I accept the Terms of service</label>
             </div>
-            <input type="Submit" value="Submit" class="text-white bg-slate-800 mt-4 p-2 font-semibold hover:outline-offset-1 hover:outline-dashed hover:outline-blue-300 rounded-sm" >
+            <input type="Submit" value="Submit" class="text-white bg-slate-800 mt-4 p-2 font-semibold hover:outline-offset-1 hover:outline-dashed hover:outline-blue-300 rounded-sm w-full">
         </form>
     </nav>
     <main class="flex-1 flex flex-col items-center px-10 py-10 min-h-screen gap-6 overflow-y-scroll">
@@ -35,37 +45,57 @@
             <hr>
             <p class="text-gray-400 font-regular">22/03/2025 - 11:00 PM</p>
             <p class="mt-2">Looking for recommendations on the best programming languages to learn in 2025. I'm particularly interested in backend development and cloud computing. I've heard a lot about Rust and Go gaining popularity, but I'm also considering Python for its machine learning capabilities. Would love to hear from experienced developers about which path would be most valuable for career growth.</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
         <div class="w-full bg-slate-800 min-h-min p-10 rounded-2xl max-w-3xl">
             <h2 class="font-semibold text-2xl">sarah.smith@example.com</h2>
             <hr>
             <p class="text-gray-400 font-regular">21/03/2025 - 09:15 AM</p>
             <p class="mt-2">Just completed my first web development project! It's a simple portfolio website built with HTML, CSS, and JavaScript. The journey was challenging but incredibly rewarding. I implemented responsive design, dark mode toggle, and even integrated a blog section. Learned a lot about CSS Grid and Flexbox along the way. Would love feedback from the community on best practices and potential improvements. Check it out at my-portfolio-site.com!</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
         <div class="w-full bg-slate-800 min-h-min p-10 rounded-2xl max-w-3xl">
             <h2 class="font-semibold text-2xl">tech.enthusiast@example.com</h2>
             <hr>
             <p class="text-gray-400 font-regular">20/03/2025 - 03:45 PM</p>
             <p class="mt-2">Has anyone tried the new AI-powered code completion tools? I've been experimenting with several options over the past month, including GitHub Copilot and Amazon CodeWhisperer. The technology is impressive but I'm concerned about code quality and potential security implications. Would love to hear your experiences, especially in enterprise environments. What are your thoughts on productivity gains vs. the learning curve? Any specific success stories or cautionary tales?</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
         <div class="w-full bg-slate-800 min-h-min p-10 rounded-2xl max-w-3xl">
             <h2 class="font-semibold text-2xl">developer123@example.com</h2>
             <hr>
             <p class="text-gray-400 font-regular">19/03/2025 - 07:30 PM</p>
             <p class="mt-2">Working on a new open-source project for task management. Looking for contributors who are interested in React and Node.js! The project uses Next.js 14, TypeScript, and Prisma for the backend. We're implementing real-time collaboration features using WebSockets and planning to add AI-powered task prioritization. The project is in early stages but we have a solid roadmap. If you're passionate about clean code and want to gain experience with modern web technologies, check out our GitHub repo!</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
         <div class="w-full bg-slate-800 min-h-min p-10 rounded-2xl max-w-3xl">
             <h2 class="font-semibold text-2xl">cloud.architect@example.com</h2>
             <hr>
             <p class="text-gray-400 font-regular">18/03/2025 - 02:15 PM</p>
             <p class="mt-2">Just finished migrating a large-scale application to a microservices architecture using Kubernetes. The journey was quite challenging but extremely educational. We faced interesting problems with service discovery, load balancing, and maintaining data consistency across services. I've documented our entire process, including the pitfalls we encountered and how we solved them. Would anyone be interested in a detailed blog post about our experience? I can share our strategies for monitoring, scaling, and ensuring high availability.</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
         <div class="w-full bg-slate-800 min-h-min p-10 rounded-2xl max-w-3xl">
             <h2 class="font-semibold text-2xl">security.expert@example.com</h2>
             <hr>
             <p class="text-gray-400 font-regular">17/03/2025 - 10:45 AM</p>
             <p class="mt-2">Important security advisory: We've discovered a critical vulnerability in a popular npm package that could lead to remote code execution. The affected versions are 2.1.0 through 2.1.8. If you're using this package, please update immediately to version 2.1.9. I've created a detailed analysis of the vulnerability, including potential exploit vectors and mitigation strategies. This is a reminder of why regular dependency audits and automated security scanning are crucial in modern development workflows.</p>
+            <button class="bg-slate-700 p-2 rounded-lg mt-4 hover:bg-slate-600 hover:outline-blue-300 hover:outline-dashed PostACommentUnderPostButton">Comment</button>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const PostACommentButtons = document.querySelectorAll(".PostACommentUnderPostButton");
+            const PostACommentDialog = document.getElementById("CommentPostDialog");
+
+            if (PostACommentDialog && PostACommentButtons) {
+                PostACommentButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        PostACommentDialog.showModal();
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
