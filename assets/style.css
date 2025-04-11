@@ -1,0 +1,28 @@
+@keyframes MusicVinylSpin {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.MusicVinylSpin{
+    animation: 2s linear infinite MusicVinylSpin;
+}
+
+@keyframes MovingBg {
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 20px 20px;
+    }
+}
+
+.AnimatedBg{
+    animation: 1s linear infinite MovingBg;
+}
