@@ -11,6 +11,24 @@
     <meta name="author" content="Mark Pikaro">
     <!-- A css file should've been here, but sadly I like my tailwind more :> -->
     <!-- There is an import for Font Awesome above, works same as importing styles.css, but with icons -->
+
+    <style>
+        @keyframes MusicVinylSpin {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .MusicVinylSpin{
+            animation: 2s linear infinite MusicVinylSpin;
+        }
+    </style>
 </head>
 <body class="bg-black text-green-500 font-mono">
     <div class="fixed inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:20px_20px]"></div>
@@ -170,8 +188,40 @@
         </div>
     </footer>
 
+    <div class="fixed bottom-0 right-4 flex flex-col">
+        <div class="bg-green-900 flex shrink w-[52px] h-[52px] ml-auto rounded-t-lg hover:cursor-pointer" onClick="MusicDrawerToggle()">
+            <svg id="MusicDrawerVinyl" class="m-auto" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M6 12c0-1.7.7-3.2 1.8-4.2"/><circle cx="12" cy="12" r="2"/><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"/></g></svg>
+        </div>
+        <div class="bg-green-900 overflow-none hidden" id="MusicDrawerMusic">
+            <audio src="/assets/Cipher_BGM.mp3" id="MusicDrawerAudio" class="MusicDrawerAudioPlayer" controls loop></audio>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script>
+        const MusicDrawerMusic = document.getElementById("MusicDrawerMusic");
+        const MusicDrawerAudio = document.getElementById("MusicDrawerAudio");
+        const MusicDrawerVinyl = document.getElementById("MusicDrawerVinyl");
+        let MusicDrawerToggleStatus = true;
+        
+        MusicDrawerAudio.addEventListener('playing',() =>{
+            MusicDrawerVinyl.classList.add("MusicVinylSpin");
+        })
+
+        MusicDrawerAudio.addEventListener('pause', () => {
+            MusicDrawerVinyl.classList.remove("MusicVinylSpin");
+        })
+
+        function MusicDrawerToggle() {
+            if (MusicDrawerToggleStatus == true) {
+                MusicDrawerMusic.classList.remove("hidden");
+                MusicDrawerToggleStatus=false;
+            } else {
+                MusicDrawerMusic.classList.add("hidden");
+                MusicDrawerToggleStatus=true;
+            }
+        }
+
         var typed = new Typed('#changing-text',{
             strings: ['Full-Stack Developer', '"I use Linux btw" -guy', 'Billion dollar corpo owner', 'Second S1MPLE'],
             typeSpeed: 50,
