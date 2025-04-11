@@ -28,10 +28,23 @@
         .MusicVinylSpin{
             animation: 2s linear infinite MusicVinylSpin;
         }
+
+        @keyframes MovingBg {
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 20px 20px;
+            }
+        }
+
+        .AnimatedBg{
+            animation: 1s linear infinite MovingBg;
+        }
     </style>
 </head>
 <body class="bg-black text-green-500 font-mono">
-    <div class="fixed inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+    <div class="fixed inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#0f0_1px,transparent_1px)] bg-[size:20px_20px] AnimatedBg"></div>
     <header class="fixed w-full top-0 z-50 bg-black/90 border-b border-green-500/30">
         <nav class="container mx-auto px-4">
             <ul class="flex justify-center space-x-4 py-2 text-sm">
@@ -44,6 +57,7 @@
                 <li><a href="#skills" class="hover:text-white transition-colors select-none">[SKILLS]</a></li>
                 <li><a href="#education" class="hover:text-white transition-colors select-none">[EDUCATION]</a></li>
                 <li><a href="#socials" class="hover:text-white transition-colors select-none">[SOCIALS]</a></li>
+                <li><a href="#FAQ" class="hover:text-white transition-colors select-none">[FAQ]</a></li>
             </ul>
         </nav>
     </header>
@@ -178,6 +192,28 @@
                         <span>[LinkedIn]</span>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <section id="FAQ" class="py-16">
+            <h2 class="text-2xl font-bold mb-8">> FREQUENTLY_ASKED_QUESTIONS</h2>
+            <div class="space-y-4 max-w-2xl">
+                <details class="border border-green-500/30 p-4 rounded">
+                    <summary class="font-bold cursor-pointer">What technologies do you work with?</summary>
+                    <p class="mt-2 text-green-400/70">For now I work well with Full-Stack Development tech like HTML, CSS, JS, Python. I also know Linux servers quite well, so if you need something updated, reinstalled, fixed etc. I am here. I'm always learning and adapting to new technologies.</p>
+                </details>
+                <details class="border border-green-500/30 p-4 rounded">
+                    <summary class="font-bold cursor-pointer">Are you available for freelance work?</summary>
+                    <p class="mt-2 text-green-400/70">Yes, I'm open to freelance opportunities and collaborations on interesting projects. Feel free to reach out through my social connections.</p>
+                </details>
+                <details class="border border-green-500/30 p-4 rounded">
+                    <summary class="font-bold cursor-pointer">How did you get started in programming?</summary>
+                    <p class="mt-2 text-green-400/70">I began my journey during school, in 5th grade, experimenting with creating basic HTML webpages. My passion for building new things drove me to pursue it professionally.</p>
+                </details>
+                <details class="border border-green-500/30 p-4 rounded">
+                    <summary class="font-bold cursor-pointer">What's your preferred development environment?</summary>
+                    <p class="mt-2 text-green-400/70">I primarily work with Linux-based systems and use VS Code as my main editor. I value efficiency and customization in my development workflow.</p>
+                </details>
             </div>
         </section>
     </main>
