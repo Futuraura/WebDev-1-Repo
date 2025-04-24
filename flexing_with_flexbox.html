@@ -16,24 +16,44 @@
             font-family: Arial, sans-serif;
         }
         .lists-list {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
             padding: 20px;
         }
         .list {
-            min-width: 33%;
             height: 100%;
             background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .profile{
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+            height: 120px;
+            outline: 2px white solid;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .profile-name{
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .profile-image{
+            border-radius: 12px;
+            width: auto;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <p id="statistic">Loading...</p>
     <div class="lists-list">
         <div class="list" id="pokemon-list">
-        
+            <p style="align-self: center; font-size: 24px; font-weight: 900;">P.S The pokemon list has a shitty API. Their count returns a false count value, so it doesn't always load perfectly. (imagine)</p>
         </div>
         <div class="list" id="digimon-list">
 
@@ -43,28 +63,86 @@
         </div>
     </div>
     <script>
-        let TotalPokemonCount, TotalDigimonCount, TotalRnMCount;
+        let apiData = {
+            pokemon: {
+                baseUrl: "https://pokeapi.co/api/v2/pokemon/",
+                countUrl: "https://pokeapi.co/api/v2/pokemon",
+                totalCount: 0,
+                image: "sprites.other.official-artwork.front_default",
+                name: "name"
+            },
+            digimon: {
+                baseUrl: "https://digi-api.com/api/v1/digimon/",
+                countUrl: "https://digi-api.com/api/v1/digimon",
+                totalCount: 0,
+                image: "images.0.href",
+                name: "name"
+            },
+            rickandmorty: {
+                baseUrl: "https://rickandmortyapi.com/api/character/",
+                countUrl: "https://rickandmortyapi.com/api/character",
+                totalCount: 0,
+                image: "image",
+                name: "name"
+            }
+        };
 
-        function PopulateList(DivList,TotalNCount) {
+        async function PopulateList(apiType, listId) {
+            const api = apiData[apiType];
+            const list = document.getElementById(listId);
+            
             for (let i = 0; i < 10; i++) {
-                let RandomNumberForApi = Math.floor(Math.random() + 1 * TotalNCount);
-                document.getElementById(DivList, TotalNCount).appendChild(
-                    
-                )
+                let success = false;
+                
+                while (!success) {
+                    try {
+                        let randomId = Math.floor(Math.random() * api.totalCount) + 1;
+                        let response = await fetch(api.baseUrl + randomId);
+                        let data = await response.json();
+                        
+                        let imageUrl;
+                        if (apiType === 'pokemon') {
+                            imageUrl = data.sprites.other['official-artwork'].front_default;
+                        } else if (apiType === 'digimon') {
+                            imageUrl = data.images[0].href;
+                        } else {
+                            imageUrl = data.image;
+                        }
+
+                        let html = `
+                        <div class="profile">
+                            <img src="${imageUrl}" class="profile-image">
+                            <p class="profile-name">${data.name}</p>
+                        </div>
+                        `;
+                        list.innerHTML += html;
+                        success = true;
+                    } catch {
+                        console.log("Error! Retry.");
+                    }
+                }
             }
         }
 
-        function ShowMeTheStatus(HtmlElement) {
-            document.getElementById(HtmlElement).innerText = "Successfully found RnM characters: " + TotalRnMCount + ", Pokemon characters: " + TotalPokemonCount + " and Digimon characters: " + TotalDigimonCount;
-        }
-
-        Promise.all([
-            fetch("https://pokeapi.co/api/v2/pokemon").then(response => response.json()).then(data => { TotalPokemonCount = data.count; }),
-            fetch("https://digi-api.com/api/v1/digimon").then(response => response.json()).then(data => { TotalDigimonCount = data.pageable.totalElements; }),
-            fetch("https://rickandmortyapi.com/api/character").then(response => response.json()).then(data => { TotalRnMCount = data.info.count; })
-        ]).then(() => {
-            ShowMeTheStatus("statistic");
-        });
+        fetch("https://pokeapi.co/api/v2/pokemon")
+            .then(response => response.json())
+            .then(data => {
+                apiData.pokemon.totalCount = data.count;
+                return fetch("https://digi-api.com/api/v1/digimon");
+            })
+            .then(response => response.json())
+            .then(data => {
+                apiData.digimon.totalCount = data.pageable.totalElements;
+                return fetch("https://rickandmortyapi.com/api/character");
+            })
+            .then(response => response.json())
+            .then(data => {
+                apiData.rickandmorty.totalCount = data.info.count;
+                
+                PopulateList("digimon", "digimon-list");
+                PopulateList("rickandmorty", "palworld-list");
+                PopulateList("pokemon", "pokemon-list");
+            })
     </script>
-</body>
+    </body>
 </html>
