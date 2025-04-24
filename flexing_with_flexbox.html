@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .lists-list {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .list {
+            min-width: 33%;
+            height: 100%;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p id="statistic">Loading...</p>
+    <div class="lists-list">
+        <div class="list" id="pokemon-list">
+        
+        </div>
+        <div class="list" id="digimon-list">
+
+        </div>
+        <div class="list" id="palworld-list">
+
+        </div>
+    </div>
+    <script>
+        let TotalPokemonCount, TotalDigimonCount, TotalRnMCount;
+
+        function PopulateList(DivList,TotalNCount) {
+            for (let i = 0; i < 10; i++) {
+                let RandomNumberForApi = Math.floor(Math.random() + 1 * TotalNCount);
+                document.getElementById(DivList, TotalNCount).appendChild(
+                    
+                )
+            }
+        }
+
+        function ShowMeTheStatus(HtmlElement) {
+            document.getElementById(HtmlElement).innerText = "Successfully found RnM characters: " + TotalRnMCount + ", Pokemon characters: " + TotalPokemonCount + " and Digimon characters: " + TotalDigimonCount;
+        }
+
+        Promise.all([
+            fetch("https://pokeapi.co/api/v2/pokemon").then(response => response.json()).then(data => { TotalPokemonCount = data.count; }),
+            fetch("https://digi-api.com/api/v1/digimon").then(response => response.json()).then(data => { TotalDigimonCount = data.pageable.totalElements; }),
+            fetch("https://rickandmortyapi.com/api/character").then(response => response.json()).then(data => { TotalRnMCount = data.info.count; })
+        ]).then(() => {
+            ShowMeTheStatus("statistic");
+        });
+    </script>
+</body>
+</html>
