@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark's Vibe coded hell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-purple': '#b700ff',
+                        'neon-blue': '#00f7ff',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="assignment2.js" defer></script>
+</head>
+<body class="min-h-screen font-space text-white flex flex-col items-center justify-center p-8" style="background-image: url('https://unsplash.com/photos/phIFdC6lA4E/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ3MjkxMjU5fA&force=true&w=1920'); background-size: cover; background-position: center;">
+    <div class="w-full max-w-4xl backdrop-blur-xl bg-black/40 rounded-2xl p-8 shadow-2xl border border-white/10">
+        <main class="text-center">
+            <a href="/" class="inline-block backdrop-blur-sm bg-black/40 rounded-xl px-6 py-3 border border-white/10 hover:bg-black/60 transition-all duration-300 hover:scale-105 mb-8">
+                <span class="text-xl font-semibold text-neon-blue">← Back</span>
+            </a>
+            
+            <h2 class="text-2xl font-bold text-neon-blue mb-8">Here's a calculator, calculate it yourself :D</h2>
+            
+            <div class="calculator max-w-xs mx-auto bg-gradient-to-b from-gray-800 to-gray-900 p-6 rounded-3xl shadow-[0_8px_20px_rgba(0,0,0,0.5)] border-t border-gray-700 border-2" style="box-shadow: inset 0 1px 2px rgba(255,255,255,0.1), 0 8px 20px rgba(0,0,0,0.5)">
+                <div class="display bg-gradient-to-b from-gray-600 to-gray-700 p-4 rounded-xl mb-4" style="box-shadow: inset 0 2px 8px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1)">
+                    <input id="calculatorDisplay" type="text" readonly class="w-full bg-transparent text-right text-2xl font-bold text-neon-blue focus:outline-none" style="text-shadow: 0 0 10px rgba(0,247,255,0.5)" value="0">
+                </div>
+                
+                <div class="grid grid-cols-4 gap-3">
+                    <button onclick="clearDisplay()" class="btn col-span-2 bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">AC</button>
+                    <button onclick="backspace()" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">C</button>
+                    <button onclick="typeIn('/')" class="btn bg-gradient-to-b from-orange-400 to-orange-600 text-white py-3 rounded-xl border border-orange-300 hover:from-orange-300 hover:to-orange-500 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">÷</button>
+                    
+                    <button onclick="typeIn('7')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">7</button>
+                    <button onclick="typeIn('8')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">8</button>
+                    <button onclick="typeIn('9')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">9</button>
+                    <button onclick="typeIn('*')" class="btn bg-gradient-to-b from-orange-400 to-orange-600 text-white py-3 rounded-xl border border-orange-300 hover:from-orange-300 hover:to-orange-500 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">×</button>
+                    
+                    <button onclick="typeIn('4')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">4</button>
+                    <button onclick="typeIn('5')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">5</button>
+                    <button onclick="typeIn('6')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">6</button>
+                    <button onclick="typeIn('-')" class="btn bg-gradient-to-b from-orange-400 to-orange-600 text-white py-3 rounded-xl border border-orange-300 hover:from-orange-300 hover:to-orange-500 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">-</button>
+                    
+                    <button onclick="typeIn('1')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">1</button>
+                    <button onclick="typeIn('2')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">2</button>
+                    <button onclick="typeIn('3')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">3</button>
+                    <button onclick="typeIn('+')" class="btn bg-gradient-to-b from-orange-400 to-orange-600 text-white py-3 rounded-xl border border-orange-300 hover:from-orange-300 hover:to-orange-500 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">+</button>
+                    
+                    <button onclick="typeIn('0')" class="btn col-span-2 bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">0</button>
+                    <button onclick="typeIn('.')" class="btn bg-gradient-to-b from-gray-600 to-gray-800 text-white py-3 rounded-xl border border-gray-600 hover:from-gray-500 hover:to-gray-700 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">.</button>
+                    <button onclick="calculate()" class="btn bg-gradient-to-b from-orange-400 to-orange-600 text-white py-3 rounded-xl border border-orange-300 hover:from-orange-300 hover:to-orange-500 active:scale-95 transition-transform duration-100" style="box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3); text-shadow: 0 -1px 0 rgba(0,0,0,0.4)">=</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark's Vibe coded hell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-purple': '#b700ff',
+                        'neon-blue': '#00f7ff',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen font-space text-white flex flex-col items-center justify-center p-8" style="background-image: url('https://unsplash.com/photos/phIFdC6lA4E/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ3MjkxMjU5fA&force=true&w=1920'); background-size: cover; background-position: center;">
+    <div class="w-full max-w-4xl backdrop-blur-xl bg-black/40 rounded-2xl p-8 shadow-2xl border border-white/10">
+        <main class="text-center">
+            <h1 class="text-4xl font-bold text-neon-blue mb-8 drop-shadow-[0_0_10px_rgba(0,247,255,0.5)]">Welcome to the website!</h1>
+            <div class="backdrop-blur-sm bg-black/40 rounded-xl p-8 shadow-inner border border-white/10 mb-8">
+                <h3 class="text-xl font-semibold mb-4">🚨 Disclaimer</h3>
+                <p class="text-gray-300">All assignments have been completed manually as required. This website's HTML and CSS code has been vibe-coded to quickly create a template for the assignments. All of the Javascript is and has been manually written.</p>
+            </div>
+
+            
+            
+            <h2 class="text-2xl font-semibold text-neon-blue mb-6">Javascript assignments</h2>
+            <nav class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <a href="assignments/assignment1.html" class="backdrop-blur-sm bg-black/40 rounded-xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold text-neon-blue">Assignment 1</h3>
+                </a>
+                <a href="assignments/assignment2.html" class="backdrop-blur-sm bg-black/40 rounded-xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold text-neon-blue">Assignment 2 (and 3)</h3>
+                </a>
+                <a href="assignments/assignment4.html" class="backdrop-blur-sm bg-black/40 rounded-xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold text-neon-blue">Assignment 4</h3>
+                </a>
+                <a href="assignments/assignment5.html" class="backdrop-blur-sm bg-black/40 rounded-xl p-6 border border-white/10 hover:bg-black/60 transition-all duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold text-neon-blue">Assignment 5</h3>
+                </a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>
